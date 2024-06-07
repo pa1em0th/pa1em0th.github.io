@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация/Регистрация</title>
+    <link rel="stylesheet" href="stylle.css">
+</head>
+<body>
+    <h2>Добро пожаловать</h2>
+    <link rel="stylesheet" href="stylle.css">
+    <form id="authForm">
+        <label for="username">Введите логин:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Введите пароль:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <button type="button" onclick="registerUser()">Зарегистрироваться</button>
+        <button type="button" onclick="loginUser()">Войти</button>
+    </form>
+
+    <p><span id="currentTime"></span></p>
+    <p><span id="currentDate"></span></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

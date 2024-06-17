@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запросы к API</title>
+</head>
+<body>
+    <h1>Запросы к API</h1>
+    <div>
+        <h2>Случайный факт о кошках</h2>
+        <div id="catFact"></div>
+    </div>
+    <div>
+        <h2>Определение национальности по имени</h2>
+        <label for="nameInput">Введите ваше имя:</label>
+        <input type="text" id="nameInput" name="nameInput">
+        <button onclick="getNationality()">Узнать национальность</button>
+    </div>
+    <div id="nationality"></div>
+    <div>
+        <h2>Случайное изображение собаки</h2>
+        <div id="dogImage"></div>
+    </div>
+
+    <script>
+        // Функция для получения случайного факта о кошках
+        async function getCatFact() {
+            const response = await fetch('https://catfact.ninja/fact');
+            const data = await response.json();
+            document.getElementById('catFact').textContent = data.fact;
+            translateCatFact(data.fact);
+        }
+
+        // Функция для определения национальности по имени
+        async function getNationality() {
+            const name = document.getElementById('nameInput').value;
+            const response = await fetch(`https://api.nationalize.io?name=${name}`);
+            const data = await response.json();
+            document.getElementById('nationality').textContent = `Национальность: ${data.country[0].country_id}`;
+        }
+
+        // Функция для получения случайного изображения собаки
+        async function getDogImage() {
+            const response = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data = await response.json();
+            document.getElementById('dogImage').innerHTML = `<img src="${data.message}" alt="Случайное изображение собаки">`;
+        }
+
+        // Вызов функций
+        getCatFact();
+        getDogImage();
+    </script>
+</body>
+</html>

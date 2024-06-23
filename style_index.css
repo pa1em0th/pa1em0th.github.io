@@ -1,0 +1,105 @@
+body {
+    font-family: Courier, monospace; /* шрифт */
+    margin: 0; /* отступы по краям */
+    padding: 0; /* внутренние отступы */
+    background-color: #000000; /* задний фон */
+    background-image: url('background.jpg'); /* фоновое изображение */
+    min-height: 100vh;
+    min-width: 640px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex; /* используем flexbox */
+    justify-content: center; /* центрирование по горизонтали */
+    align-items: center; /* центрирование по вертикали */
+    flex-direction: column; /* элементы будут расположены в столбец */
+}
+
+.container {
+    width: 300px; /* ширина */
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #000000ad;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    color: #ffffff; /* цвет текста */
+    margin-bottom: 10px;
+    text-align: center; /* текст по центру */
+}
+
+form {
+    width: 300px; /* ширина формы */
+    margin: 0 auto; /* центрируем форму по горизонтали */
+    padding: 50px; /* внутренние отступы */
+    border-radius: 5px; /* округление углов */
+    box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5); /* тень вокруг формы */
+    background: linear-gradient(to bottom, #000000ce, #59595994); /* градиент */
+}
+
+
+label {
+    color: #cccccc; /* светло-серый цвет текста меток */
+    display: block;
+    margin-bottom: 5px;
+    text-align: left; /* текст меток по левому краю */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* ширина полей ввода */
+    padding: 10px; /* внутренние отступы */
+    margin-bottom: 10px; /* нижний отступ */
+    border: 1px solid #ddddddb2; /* параметры рамки */
+    border-radius: 10px; /* скругление углов */
+}
+.login-link {
+    font-family: Courier, monospace;
+    color: white; /* цвет текста на кнопке */
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    background-color: #2d2d2d;
+}
+button {
+    font-family: Courier, monospace;
+    background-color: #424242ac; /* цвет фона кнопки */
+    color: white; /* цвет текста на кнопке */
+    padding: 10px 20px; /* внутренние отступы */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #2d2d2d;
+}
+
+#currentDate, #currentTime {
+    font-family: Courier, monospace;
+    font-size: 24px;
+    color: #ffffff97;
+    text-align: center;
+}
+
+#currentDate {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#currentTime {
+    font-size: 32px;
+    padding: 10px;
+    border: 2px solid #b6b6b6aa;
+    border-radius: 5px;
+    background-color: rgba(30, 30, 30, 0.1);
+    backdrop-filter: blur(5px);
+}

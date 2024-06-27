@@ -1,26 +1,29 @@
-@import 'style_index.css';
 
 body {
-    background-color: #1a1a1a;
-    color: #ffffff;
+    font-family: Courier, monospace; /* современный шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #00000060;
     background-image: url('autoo.jpg');
-    background-size: cover;
-    background-position: center;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    background-size: cover;
 }
 
 .container {
     width: 80%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 30px;
-    border: 1px solid #333333;
+    border: 1px solid #33333396;
     border-radius: 8px;
-    background-color: #28282877;
+    background-color: #28282894;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px); /* добавление блюра */
 }
 
 h2 {
@@ -75,4 +78,58 @@ p {
     margin: 0;
     padding: 5px 0;
     font-size: 1rem;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#logoutButton {
+    background-color: #000000b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#logoutButton:hover {
+    background-color: #222222bd;
+}
+#buyButton {
+    background-color: #000000b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#buyButton:hover {
+    background-color: #222222bd;
+}
+.logo {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(26, 26, 26, 0.719);
+    color: rgb(187, 187, 187);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

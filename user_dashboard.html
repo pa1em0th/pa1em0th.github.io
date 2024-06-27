@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="style_user_dashboard.css">
 </head>
 <body>
+    <img src="logo.png" alt="Логотип" class="logo">
     <div class="container">
-        <h2>Каталог автомобилей</h2>
+        <div class="header">
+            <h2>Каталог автомобилей</h2>
+            <button id="logoutButton">Выйти</button>
+        </div>
         <select id="carSelect">
-            <!-- Здесь будут вставляться опции для выбора марки автомобиля -->
         </select>
         <div id="carDetails" style="display: none;">
             <div class="car-info">
@@ -21,7 +24,11 @@
             <div class="car-photo">
                 <img id="carPhoto" src="" alt="">
             </div>
+            <button id="buyButton">Купить</button>
         </div>
+    </div>
+    <div class="footer">
+        <p>© 2023 Автосалон. Все права защищены.</p>
     </div>
     <script src="user.js"></script>
 </body>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заявки на покупку автомобиля</title>
+    <link rel="stylesheet" href="style_application_form.css">
+</head>
+<body>
+    <img src="logo.png" alt="Логотип" class="logo">
+    <button class="exit-button" onclick="confirmLogout()">Выйти</button>
+    <div class="container">
+        <h2>Форма заявки на покупку автомобиля</h2>
+        <form id="applicationForm">
+            <div class="form-group">
+                <label for="fullName">ФИО:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="carModel">Модель автомобиля:</label>
+                <input type="text" id="carModel" name="carModel" value="" readonly>
+            </div>
+            <div class="form-group">
+                <label for="payment">Оплата:</label>
+                <input type="checkbox" id="payment" name="payment">
+            </div>
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+    <div id="paymentPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="paymentStatus">Оплачено</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Автосалон. Все права защищены.</p>
+    </div>
+    <script src="application_form.js"></script>
+    <script>
+        function confirmLogout() {
+            if (confirm('Вы уверены, что хотите выйти?')) {
+                window.location.href = "index.html";
+            }
+        }
+
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            if (!document.getElementById('payment').checked) {
+                event.preventDefault();
+                alert('Для отправки заявки необходимо подтвердить оплату.');
+            }
+        });
+
+        document.getElementById('payment').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('paymentPopup').style.display = 'block';
+            } else {
+                document.getElementById('paymentPopup').style.display = 'none';
+            }
+        });
+
+        document.querySelector('.close').addEventListener('click', function() {
+            document.getElementById('paymentPopup').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
